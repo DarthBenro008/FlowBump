@@ -24,14 +24,14 @@ class NftViewModel @Inject constructor (
         viewModelScope.launch {
             _state.update {
                 it.copy(
-                    isLoading = true
+                    isLoading = false
                 )
             }
         }
     }
 
 
-    suspend fun getWallet(id: String){
+    fun getWallet(id: String){
         viewModelScope.launch {
             _state.update {
                 it.copy(

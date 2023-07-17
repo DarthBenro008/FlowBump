@@ -12,6 +12,10 @@ apollo {
     }
 }
 
+def apikeyPropertiesFile = rootProject.file("config.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     namespace = "com.benrostudios.flowbump"
     compileSdk 34
@@ -27,6 +31,8 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+        buildConfigField("String", "API_KEY", apikeyProperties['api'])
+        buildConfigField("String", "API_SECRET", apikeyProperties['secret'])
     }
 
     buildTypes {

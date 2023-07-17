@@ -4,10 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -38,11 +35,22 @@ class MainActivity : ComponentActivity() {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text("Hello Rishabh!")
-                        Button(onClick = {
-                            println("This button was clicked!")
-                        }) {
-                            Text("Click me")
+                        if (state.isLoading) {
+                            CircularProgressIndicator()
+                        } else {
+                            Button(onClick = {
+                                println("This button was clicked!")
+                                viewModel.getWallet("1b839830-31a1-485d-9693-ddf6f7999560")
+                                println(state.wallet)
+                            }) {
+                                if(state.wallet?.id != null) {
+                                    Text(state.wallet?.address?: "no address")
+                                } else {
+                                    Text("Click me")
+                                }
+                            }
                         }
+
                     }
                 }
             }
