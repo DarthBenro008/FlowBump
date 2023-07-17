@@ -1,0 +1,44 @@
+query WalletById($wallet_id: ID!) {
+    walletById(id: $wallet_id) {
+        id
+        address
+        state
+        nftCount
+        nfts {
+            id
+            metadata
+            model {
+                metadata
+            }
+        }
+    }
+}
+
+query NFTModelsQuery {
+    nftModels {
+        items {
+            id
+            title
+            description
+            metadata
+        }
+    }
+}
+
+query NFTModel($id: ID!) {
+    nftModel(id: $id) {
+        attributes
+        metadata
+        id
+        state
+        content {
+            files {
+                url
+            }
+            id
+            poster {
+                url
+            }
+        }
+    }
+}

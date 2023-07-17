@@ -1,0 +1,22 @@
+mutation CreateWallet {
+    createNiftoryWallet {
+        id
+        address
+        state
+    }
+}
+
+
+mutation Transfer($address: String, $id: ID) {
+    transfer(address: $address, nftModelId: $id) {
+        id
+        blockchainState
+        saleState
+        serialNumber
+        blockchainId
+        model {
+            id
+            title
+        }
+    }
+}
