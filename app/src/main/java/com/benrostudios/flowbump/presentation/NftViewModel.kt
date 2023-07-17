@@ -5,12 +5,15 @@ import androidx.lifecycle.viewModelScope
 import com.benrostudios.NFTModelQuery
 import com.benrostudios.WalletByIdQuery
 import com.benrostudios.flowbump.domain.GetNftsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NftViewModel(
+@HiltViewModel
+class NftViewModel @Inject constructor (
     private val nftsUseCase: GetNftsUseCase
 ) : ViewModel() {
 

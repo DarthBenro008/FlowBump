@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.benrostudios.flowbump">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name="com.benrostudios.flowbump.FlowBumpApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
