@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.benrostudios.flowbump">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name="com.benrostudios.flowbump.FlowBumpApp"
@@ -16,6 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowBump"
         tools:targetApi="31">
+        <activity
+            android:name="com.benrostudios.flowbump.presentation.home.HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.FlowBump" />
+        <activity
+            android:name="com.benrostudios.flowbump.presentation.sign_in.SignInActivity"
+            android:exported="true"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/Theme.FlowBump">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
