@@ -116,6 +116,9 @@ dependencies {
 
     //Lottie
     implementation("com.airbnb.android:lottie-compose:6.1.0")
+
+    //NearbyAPI
+    implementation('com.google.android.gms:play-services-nearby:18.7.0')
 }
 
 // Allow references to generated code
